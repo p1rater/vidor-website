@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="#DC143C" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages - Vidor OS</title>
+    <style>
+        /* Köpekbalığı imleç */
+        * {
+            box-sizing: border-box;
+            cursor: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48ZGVmcz48c3R5bGU+LnNoYXJrLWJvZHl7ZmlsbDojREM0MzNDfS5zaGFyay1leWV7ZmlsbDojMDAwfTwvc3R5bGU+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE2LDE2KSI+PHBhdGggY2xhc3M9InNoYXJrLWJvZHkiIGQ9Ik0tOCwtNCBMNCwtOCBMOCwtNiBMOCwwIEw0LDIgTDAsASBMLTgsNCBaIi8+PHBhdGggY2xhc3M9InNoYXJrLWJvZHkiIGQ9Ik00LC04IEw4LC00IEwxMiwtNiBMMTQsLTMgTDEyLDAgTDgsLTYgWiIvPjxjaXJjbGUgY2xhc3M9InNoYXJrLWV5ZSIgY3g9IjIiIGN5PSItMyIgcj0iMSIvPjwvZz48L3N2Zz4=') 5 5, auto;
+        }
+        
+        a, button {
+            cursor: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48ZGVmcz48c3R5bGU+LnNoYXJrLWJvZHl7ZmlsbDojZmYxNzQ0fS5zaGFyay1leWV7ZmlsbDojMDAwfTwvc3R5bGU+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE2LDE2KSI+PHBhdGggY2xhc3M9InNoYXJrLWJvZHkiIGQ9Ik0tOCwtNCBMNCwtOCBMOCwtNiBMOCwwIEw0LDIgTDAsASBMLTgsNCBaIi8+PHBhdGggY2xhc3M9InNoYXJrLWJvZHkiIGQ9Ik00LC04IEw4LC00IEwxMiwtNiBMMTQsLTMgTDEyLDAgTDgsLTYgWiIvPjxjaXJjbGUgY2xhc3M9InNoYXJrLWV5ZSIgY3g9IjIiIGN5PSItMyIgcj0iMSIvPjwvZz48L3N2Zz4=') 5 5, pointer;
+        }
+        
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body { 
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #e0e0e0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-size: 15px; 
+            margin: 0; 
+            padding: 0;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header { 
+            background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 100%);
+            border-bottom: 3px solid #DC143C;
+            color: white; 
+            padding: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+            flex-shrink: 0;
+        }
+        
+        #navbar { 
+            display: flex; 
+            max-width: 100%;
+            margin: 0 auto; 
+            align-items: center; 
+            justify-content: space-between;
+            padding: 0 15px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: auto;
+        }
+        
+        .watermark-img {
+            height: 50px;
+            width: auto;
+            max-width: 60px;
+            transition: transform 0.3s;
+        }
+        
+        .watermark-img:hover {
+            transform: scale(1.1);
+        }
+        
+        #logo { 
+            padding: 12px 0;
+            font-size: clamp(20px, 5vw, 26px);
+            font-weight: 700;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+        
+        #logo a { 
+            color: #DC143C; 
+            text-decoration: none; 
+            font-family: 'Courier New', monospace;
+            text-transform: uppercase;
+            transition: text-shadow 0.3s;
+        }
+        
+        #logo a:hover { 
+            text-shadow: 0 0 20px #DC143C;
+        }
+        
+        #nav-menu { 
+            list-style: none; 
+            display: flex; 
+            margin: 0; 
+            padding: 0;
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            flex: 1;
+        }
+        
+        #nav-menu li a { 
+            color: #e0e0e0; 
+            text-decoration: none; 
+            padding: 10px 12px; 
+            display: block; 
+            font-size: clamp(11px, 2.5vw, 13px);
+            font-weight: 500;
+            transition: all 0.3s;
+            border-left: 2px solid transparent;
+            white-space: nowrap;
+        }
+        
+        #nav-menu li a:hover,
+        #nav-menu li a.active { 
+            background: rgba(220, 20, 60, 0.1);
+            border-left-color: #DC143C;
+            color: #DC143C;
+        }
+        
+        #content { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: 25px; 
+            max-width: 1400px;
+            margin: 30px auto; 
+            padding: 0 20px;
+            width: 100%;
+            flex: 1;
+        }
+        
+        .box { 
+            background: rgba(45, 45, 45, 0.8);
+            border-left: 4px solid #DC143C;
+            padding: 20px; 
+            margin-bottom: 25px; 
+            border-radius: 3px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s;
+        }
+        
+        .box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(220, 20, 60, 0.2);
+        }
+        
+        h2 { 
+            color: #DC143C;
+            border-bottom: 2px solid #DC143C;
+            padding-bottom: 10px; 
+            margin-top: 0;
+            font-size: clamp(20px, 5vw, 24px);
+        }
+        
+        h3 { 
+            color: #DC143C;
+            margin-top: 0;
+            font-size: clamp(16px, 4vw, 18px);
+        }
+        
+        .sidebar-widget { 
+            background: rgba(45, 45, 45, 0.8);
+            border-left: 4px solid #DC143C;
+            padding: 15px; 
+            margin-bottom: 20px;
+            border-radius: 3px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .sidebar-widget h4 { 
+            border-bottom: 2px solid #DC143C;
+            margin: 0 0 12px 0; 
+            padding-bottom: 8px;
+            font-size: clamp(12px, 2.5vw, 14px);
+            color: #DC143C;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .sidebar-widget ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            font-size: clamp(12px, 2.2vw, 13px);
+        }
+        
+        .sidebar-widget li { 
+            margin-bottom: 8px; 
+        }
+        
+        .sidebar-widget li a { 
+            color: #e0e0e0; 
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .sidebar-widget li a:hover {
+            color: #DC143C;
+            padding-left: 5px;
+        }
+        
+        #footer { 
+            text-align: center; 
+            font-size: clamp(11px, 2vw, 12px);
+            color: #888; 
+            padding: 30px 20px;
+            border-top: 2px solid #DC143C;
+            margin-top: 40px;
+            background: rgba(20, 20, 20, 0.9);
+            flex-shrink: 0;
+        }
+        
+        #footer p {
+            margin: 8px 0;
+        }
+        
+        #footer a {
+            color: #DC143C;
+            text-decoration: none;
+        }
+        
+        #footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 1024px) {
+            #content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #navbar {
+                flex-direction: column;
+                padding: 10px 12px;
+                align-items: center;
+                gap: 12px;
+            }
+            
+            .logo-container {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            #nav-menu {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="navbar">
+            <div class="logo-container">
+                <img src="../watermark.png" alt="Vidor OS Watermark" class="watermark-img">
+                <div id="logo"><a href="../">Vidor OS</a></div>
+            </div>
+            <ul id="nav-menu">
+                <li><a href="../">Home</a></li>
+                <li><a href="packages.html" class="active">Packages</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+                <li><a href="issues.html">Issues</a></li>
+                <li><a href="download.html">Download</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div id="content">
+        <div id="main-column">
+            <div class="box">
+                <h2>Package Database</h2>
+                <p>Vidor OS official package database contains carefully selected packages optimized for x86-64 architecture.</p>
+                <p>All packages are based on Debian Bookworm repositories, ensuring stability and compatibility. We include essential tools and optional packages for various use cases.</p>
+            </div>
+
+            <div class="box">
+                <h3>Official Repositories</h3>
+                <p><strong>Core Repository:</strong> Essential system packages and utilities</p>
+                <p><strong>Base Repository:</strong> Debian Bookworm packages with Vidor OS customizations</p>
+                <p><strong>Community Repository:</strong> User-contributed packages and third-party tools</p>
+            </div>
+
+            <div class="box">
+                <h3>Featured Packages</h3>
+                <p><strong>System Tools:</strong> NetworkManager, system utilities, and monitoring tools</p>
+                <p><strong>Desktop Environments:</strong> XFCE, GNOME (installable via vidorinstall)</p>
+                <p><strong>Development:</strong> GCC, Python, Node.js, and other development tools</p>
+                <p><strong>Security:</strong> Aircrack-ng, Nmap, Wireshark, HackRF tools (optional installation)</p>
+            </div>
+        </div>
+
+        </div>
+    </div>
+
+    <div id="footer">
+        <p>Copyright © 2026 Vidor OS Project.</p>
+        <p>The Vidor OS name and logo are trademarks of the project.</p>
+    </div>
+</body>
+</html>

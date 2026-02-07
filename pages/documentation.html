@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="theme-color" content="#DC143C" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Vidor OS</title>
+    <style>
+        /* Köpekbalığı imleç */
+        * {
+            box-sizing: border-box;
+            cursor: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48ZGVmcz48c3R5bGU+LnNoYXJrLWJvZHl7ZmlsbDojREM0MzNDfS5zaGFyay1leWV7ZmlsbDojMDAwfTwvc3R5bGU+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE2LDE2KSI+PHBhdGggY2xhc3M9InNoYXJrLWJvZHkiIGQ9Ik0tOCwtNCBMNCwtOCBMOCwtNiBMOCwwIEw0LDIgTDAsASBMLTgsNCBaIi8+PHBhdGggY2xhc3M9InNoYXJrLWJvZHkiIGQ9Ik00LC04IEw4LC00IEwxMiwtNiBMMTQsLTMgTDEyLDAgTDgsLTYgWiIvPjxjaXJjbGUgY2xhc3M9InNoYXJrLWV5ZSIgY3g9IjIiIGN5PSItMyIgcj0iMSIvPjwvZz48L3N2Zz4=') 5 5, auto;
+        }
+        
+        a, button {
+            cursor: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgdmlld0JveD0iMCAwIDMyIDMyIj48ZGVmcz48c3R5bGU+LnNoYXJrLWJvZHl7ZmlsbDojZmYxNzQ0fS5zaGFyay1leWV7ZmlsbDojMDAwfTwvc3R5bGU+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDE2LDE2KSI+PHBhdGggY2xhc3M9InNoYXJrLWJvZHkiIGQ9Ik0tOCwtNCBMNCwtOCBMOCwtNiBMOCwwIEw0LDIgTDAsASBMLTgsNCBaIi8+PHBhdGggY2xhc3M9InNoYXJrLWJvZHkiIGQ9Ik00LC04IEw4LC00IEwxMiwtNiBMMTQsLTMgTDEyLDAgTDgsLTYgWiIvPjxjaXJjbGUgY2xhc3M9InNoYXJrLWV5ZSIgY3g9IjIiIGN5PSItMyIgcj0iMSIvPjwvZz48L3N2Zz4=') 5 5, pointer;
+        }
+        
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body { 
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: #e0e0e0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            font-size: 15px; 
+            margin: 0; 
+            padding: 0;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        header { 
+            background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 100%);
+            border-bottom: 3px solid #DC143C;
+            color: white; 
+            padding: 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+            flex-shrink: 0;
+        }
+        
+        #navbar { 
+            display: flex; 
+            max-width: 100%;
+            margin: 0 auto; 
+            align-items: center; 
+            justify-content: space-between;
+            padding: 0 15px;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: auto;
+        }
+        
+        .watermark-img {
+            height: 50px;
+            width: auto;
+            max-width: 60px;
+            transition: transform 0.3s;
+        }
+        
+        .watermark-img:hover {
+            transform: scale(1.1);
+        }
+        
+        #logo { 
+            padding: 12px 0;
+            font-size: clamp(20px, 5vw, 26px);
+            font-weight: 700;
+            letter-spacing: 1px;
+            white-space: nowrap;
+        }
+        
+        #logo a { 
+            color: #DC143C; 
+            text-decoration: none; 
+            font-family: 'Courier New', monospace;
+            text-transform: uppercase;
+            transition: text-shadow 0.3s;
+        }
+        
+        #logo a:hover { 
+            text-shadow: 0 0 20px #DC143C;
+        }
+        
+        #nav-menu { 
+            list-style: none; 
+            display: flex; 
+            margin: 0; 
+            padding: 0;
+            gap: 5px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            flex: 1;
+        }
+        
+        #nav-menu li a { 
+            color: #e0e0e0; 
+            text-decoration: none; 
+            padding: 10px 12px; 
+            display: block; 
+            font-size: clamp(11px, 2.5vw, 13px);
+            font-weight: 500;
+            transition: all 0.3s;
+            border-left: 2px solid transparent;
+            white-space: nowrap;
+        }
+        
+        #nav-menu li a:hover,
+        #nav-menu li a.active { 
+            background: rgba(220, 20, 60, 0.1);
+            border-left-color: #DC143C;
+            color: #DC143C;
+        }
+        
+        #content { 
+            display: grid; 
+            grid-template-columns: 3fr 1fr; 
+            gap: 25px; 
+            max-width: 1400px;
+            margin: 30px auto; 
+            padding: 0 20px;
+            width: 100%;
+            flex: 1;
+        }
+        
+        .box { 
+            background: rgba(45, 45, 45, 0.8);
+            border-left: 4px solid #DC143C;
+            padding: 20px; 
+            margin-bottom: 25px; 
+            border-radius: 3px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s;
+        }
+        
+        .box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(220, 20, 60, 0.2);
+        }
+        
+        h2 { 
+            color: #DC143C;
+            border-bottom: 2px solid #DC143C;
+            padding-bottom: 10px; 
+            margin-top: 0;
+            font-size: clamp(20px, 5vw, 24px);
+        }
+        
+        h3 { 
+            color: #DC143C;
+            margin-top: 0;
+            font-size: clamp(16px, 4vw, 18px);
+        }
+        
+        .sidebar-widget { 
+            background: rgba(45, 45, 45, 0.8);
+            border-left: 4px solid #DC143C;
+            padding: 15px; 
+            margin-bottom: 20px;
+            border-radius: 3px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .sidebar-widget h4 { 
+            border-bottom: 2px solid #DC143C;
+            margin: 0 0 12px 0; 
+            padding-bottom: 8px;
+            font-size: clamp(12px, 2.5vw, 14px);
+            color: #DC143C;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .sidebar-widget ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0; 
+            font-size: clamp(12px, 2.2vw, 13px);
+        }
+        
+        .sidebar-widget li { 
+            margin-bottom: 8px; 
+        }
+        
+        .sidebar-widget li a { 
+            color: #e0e0e0; 
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .sidebar-widget li a:hover {
+            color: #DC143C;
+        }
+        
+        #footer { 
+            text-align: center; 
+            font-size: clamp(11px, 2vw, 12px);
+            color: #888; 
+            padding: 30px 20px;
+            border-top: 2px solid #DC143C;
+            margin-top: 40px;
+            background: rgba(20, 20, 20, 0.9);
+            flex-shrink: 0;
+        }
+        
+        #footer p {
+            margin: 8px 0;
+        }
+        
+        #footer a {
+            color: #DC143C;
+            text-decoration: none;
+        }
+        
+        #footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 1024px) {
+            #content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #navbar {
+                flex-direction: column;
+                padding: 10px 12px;
+                align-items: center;
+                gap: 12px;
+            }
+            
+            .logo-container {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            #nav-menu {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="navbar">
+            <div class="logo-container">
+                <img src="../watermark.png" alt="Vidor OS Watermark" class="watermark-img">
+                <div id="logo"><a href="../">Vidor OS</a></div>
+            </div>
+            <ul id="nav-menu">
+                <li><a href="../">Home</a></li>
+                <li><a href="packages.html">Packages</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="documentation.html" class="active">Documentation</a></li>
+                <li><a href="issues.html">Issues</a></li>
+                <li><a href="download.html">Download</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div id="content">
+        <div id="main-column">
+            <div class="box">
+                <h2>Documentation</h2>
+                <p>Learn how to use and develop for Vidor OS. Our comprehensive documentation covers everything from installation to advanced configuration.</p>
+            </div>
+
+            <div class="box">
+                <h3>System Architecture</h3>
+                <p><strong>Base Layer:</strong> Built on Debian Bookworm for stability and compatibility.</p>
+                <p><strong>Kernel:</strong> Standard Debian kernel with custom Realtek (RTL8812AU) and Atheros WiFi drivers via DKMS.</p>
+                <p><strong>Boot System:</strong> Legacy boot support with optimized bootloader for maximum compatibility.</p>
+                <p><strong>Default Environment:</strong> English language, CLI-first boot. No bloatware, only essential services.</p>
+            </div>
+
+            <div class="box">
+                <h3>Hardware Support</h3>
+                <p><strong>WiFi Compatibility:</strong> Built-in support for Alfa adapters and other Realtek/Atheros devices.</p>
+                <p><strong>ThinkPad Optimized:</strong> Special tuning for ThinkPad laptops and ultrabooks.</p>
+                <p><strong>Legacy Boot:</strong> Works seamlessly with legacy BIOS on all compatible systems.</p>
+            </div>
+
+            <div class="box">
+                <h3>vidorinstall Command</h3>
+                <p>After booting, run <code>vidorinstall</code> to configure your system:</p>
+                <p><strong>Desktop Environments:</strong> Choose between XFCE (lightweight) or GNOME (modern)</p>
+                <p><strong>Pentest Tools:</strong> One-command installation of Aircrack-ng, GQRX, HackRF, SDR, and other security tools</p>
+                <p><strong>Custom Packages:</strong> Install additional tools as needed</p>
+            </div>
+
+            <div class="box">
+                <h3>Getting Started</h3>
+                <p><strong>Installation:</strong> Boot from USB/DVD and follow the installer</p>
+                <p><strong>First Login:</strong> Username: <code>badboy</code>, Terminal as default shell</p>
+                <p><strong>Configuration:</strong> Run <code>vidorinstall</code> to customize your system</p>
+                <p><strong>Updates:</strong> Use <code>apt update && apt upgrade</code> to keep your system up-to-date</p>
+            </div>
+        </div>
+
+        <div id="sidebar">
+            <div class="sidebar-widget">
+                <h4>Documentation</h4>
+                <ul>
+                    <li><a href="#">Wiki</a></li>
+                    <li><a href="#">Manual Pages</a></li>
+                    <li><a href="#">Installation</a></li>
+                    <li><a href="#">Configuration</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p>Copyright © 2026 Vidor OS Project.</p>
+        <p>The Vidor OS name and logo are trademarks of the project.</p>
+    </div>
+</body>
+</html>
