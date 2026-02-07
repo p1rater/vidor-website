@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#DC143C" />
     <title>Vidor OS - Modern Linux Distribution</title>
     <style>
@@ -35,6 +36,31 @@
             display: flex;
             flex-direction: column;
         }
+
+        /* --- DONATE BUTON STİLİ --- */
+        .donate-btn {
+            display: inline-block;
+            background-color: #DC143C;
+            color: white !important;
+            padding: 12px 25px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 4px;
+            border: 2px solid #DC143C;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 15px rgba(220, 20, 60, 0.4);
+            margin-top: 15px;
+        }
+
+        .donate-btn:hover {
+            background-color: transparent;
+            color: #DC143C !important;
+            box-shadow: 0 0 25px rgba(220, 20, 60, 0.7);
+            transform: translateY(-2px);
+        }
+        /* -------------------------- */
         
         header { 
             background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 100%);
@@ -211,69 +237,6 @@
             margin-top: 8px;
         }
         
-        .sidebar-widget { 
-            background: rgba(45, 45, 45, 0.8);
-            border-left: 4px solid #DC143C;
-            padding: 15px; 
-            margin-bottom: 20px;
-            border-radius: 3px;
-            backdrop-filter: blur(5px);
-        }
-        
-        .sidebar-widget h4 { 
-            border-bottom: 2px solid #DC143C;
-            margin: 0 0 12px 0; 
-            padding-bottom: 8px;
-            font-size: clamp(12px, 2.5vw, 14px);
-            color: #DC143C;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .sidebar-widget ul { 
-            list-style: none; 
-            padding: 0; 
-            margin: 0; 
-            font-size: clamp(12px, 2.2vw, 13px);
-        }
-        
-        .sidebar-widget li { 
-            margin-bottom: 8px; 
-        }
-        
-        .sidebar-widget li a { 
-            color: #e0e0e0; 
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        
-        .sidebar-widget li a:hover {
-            color: #DC143C;
-            padding-left: 5px;
-        }
-        
-        .search-box {
-            background: rgba(30, 30, 30, 0.9);
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 3px;
-        }
-        
-        .search-box input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #DC143C;
-            background: #1a1a1a;
-            color: #e0e0e0;
-            border-radius: 2px;
-            font-size: clamp(12px, 2.5vw, 13px);
-        }
-        
-        .search-box input:focus {
-            outline: none;
-            box-shadow: 0 0 10px rgba(220, 20, 60, 0.5);
-        }
-        
         #footer { 
             text-align: center; 
             font-size: clamp(11px, 2vw, 12px);
@@ -285,31 +248,6 @@
             flex-shrink: 0;
         }
         
-        #footer p {
-            margin: 8px 0;
-        }
-        
-        #footer a {
-            color: #DC143C;
-            text-decoration: none;
-        }
-        
-        #footer a:hover {
-            text-decoration: underline;
-        }
-        
-        code {
-            background: #1a1a1a;
-            padding: 2px 6px;
-            border-radius: 2px;
-            color: #ff6b6b;
-            font-family: 'Courier New', monospace;
-        }
-        
-        strong {
-            color: #DC143C;
-        }
-
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -344,119 +282,10 @@
             text-align: center;
         }
 
-        /* Tablet ve küçük ekranlar */
-        @media (max-width: 1024px) {
-            #content {
-                grid-template-columns: 1fr;
-                margin: 20px auto;
-            }
-            
-            #navbar {
-                padding: 0 12px;
-                gap: 15px;
-            }
-            
-            #nav-menu {
-                gap: 3px;
-            }
-            
-            #nav-menu li a {
-                padding: 8px 10px;
-            }
-        }
-
-        /* Telefon ve küçük cihazlar */
         @media (max-width: 768px) {
-            #navbar {
-                flex-direction: column;
-                padding: 10px 12px;
-                align-items: center;
-                gap: 12px;
-            }
-            
-            .logo-container {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            #logo {
-                text-align: center;
-            }
-            
-            #nav-menu {
-                width: 100%;
-                justify-content: center;
-                gap: 2px;
-            }
-            
-            #nav-menu li a {
-                padding: 8px 8px;
-                font-size: 11px;
-            }
-            
-            #content {
-                margin: 15px auto;
-                gap: 15px;
-            }
-            
-            .box {
-                padding: 15px;
-                margin-bottom: 15px;
-            }
-            
-            #footer {
-                padding: 20px 15px;
-                font-size: 11px;
-            }
-        }
-
-        /* Çok küçük ekranlar (çanta boyutu cihazlar) */
-        @media (max-width: 480px) {
-            #navbar {
-                padding: 8px 10px;
-            }
-            
-            .watermark-img {
-                height: 40px;
-                max-width: 50px;
-            }
-            
-            #logo {
-                font-size: 18px;
-            }
-            
-            #nav-menu li a {
-                padding: 6px 6px;
-                font-size: 10px;
-            }
-            
-            #content {
-                padding: 0 10px;
-                margin: 10px auto;
-            }
-            
-            .box {
-                padding: 12px;
-            }
-            
-            h2, h3 {
-                font-size: clamp(16px, 4vw, 20px);
-            }
-        }
-
-        /* TV/Büyük ekranlar */
-        @media (min-width: 1920px) {
-            #navbar {
-                padding: 0 40px;
-            }
-            
-            #content {
-                padding: 0 40px;
-            }
-            
-            .box {
-                padding: 30px;
-            }
+            #navbar { flex-direction: column; padding: 10px; }
+            #nav-menu { width: 100%; justify-content: center; }
+            .box { padding: 15px; }
         }
     </style>
 </head>
@@ -468,11 +297,11 @@
                 <div id="logo"><a href="/">Vidor OS</a></div>
             </div>
             <ul id="nav-menu">
-                <li><a href="/" class="active">Home</a></li>
-                <li><a href="pages/packages.html">Packages</a></li>
+                <li><a href="/">Home</a></li>
+                <li><a href="https://packages.vidoros.org">Packages</a></li>
                 <li><a href="pages/community.html">Community</a></li>
-                <li><a href="pages/documentation.html">Documentation</a></li>
-                <li><a href="pages/issues.html">Issues</a></li>
+                <li><a href="pages/documentation.html">Docs</a></li>
+                <li><a href="https://donate.vidoros.org" style="color: #DC143C; font-weight: bold;">Donate</a></li>
                 <li><a href="pages/download.html">Download</a></li>
             </ul>
         </div>
@@ -483,39 +312,25 @@
             <div class="box">
                 <h2>A simple, lightweight distribution</h2>
                 <p>You've reached the website for <strong>Vidor OS</strong>, a lightweight and flexible Linux® distribution that tries to Keep It Simple.</p>
-                <p>Currently we have official packages optimized for the x86-64 architecture. We complement our official package sets with a community-operated package repository that grows in size and quality each and every day.</p>
+                <p>Currently we have official packages optimized for the x86-64 architecture. </p>
+                <a href="https://donate.vidoros.org" class="donate-btn">Support the Project ❤️</a>
             </div>
 
             <div class="box">
                 <h3>What Makes Vidor OS Different</h3>
                 <p><strong>Built on Debian Bookworm:</strong> Stable foundation without the bloat.</p>
-                <p><strong>English Base & CLI First:</strong> System boots directly to terminal, perfect for power users and penetration testing.</p>
-                <p><strong>Hardware Optimized:</strong> Special support for WiFi adapters (Realtek RTL8812AU, Atheros) and ThinkPad devices.</p>
-                <p><strong>Lightweight & Minimal:</strong> No unnecessary services. Only critical tools like NetworkManager are included.</p>
-                <p><strong>Customizable:</strong> Choose your desktop environment (XFCE, GNOME) or install additional tools (Aircrack-ng, GQRX, HackRF, SDR) as needed.</p>
+                <p><strong>English Base & CLI First:</strong> System boots directly to terminal, perfect for power users.</p>
+                <p><strong>Hardware Optimized:</strong> Special support for WiFi adapters (Realtek RTL8812AU).</p>
             </div>
 
             <div class="box">
                 <h3>Latest News</h3>
-                
                 <div class="news-item">
                     <h4><a href="#">Vidor OS 2.0 Final Release Now Available!</a></h4>
                     <p class="timestamp">2026-02-07</p>
-                    <div class="article-content">
-                        <p>The long-awaited 2.0 Final release is now available! This version brings faster system installation and improved stability.</p>
-                    </div>
+                    <p>The long-awaited 2.0 Final release is now available with improved stability!</p>
                 </div>
-
-                <div class="news-item">
-                    <h4><a href="#">Vidor OS v1.6-Final is now available</a></h4>
-                    <p class="timestamp">2026-02-06</p>
-                    <div class="article-content">
-                        <p>The latest stable release of Vidor OS has been published. This version includes updated hardware support and refined system configurations.</p>
-                    </div>
-                </div>
-
-                
-                </div>
+            </div>
         </div>
 
         <div class="box">
@@ -531,10 +346,10 @@
                 </div>
             </div>
         </div>
+    </div>
 
     <div id="footer">
         <p>Copyright © 2026 Vidor OS Project.</p>
-        <p>The Vidor OS name and logo are trademarks of the project.</p>
         <p>Linux® is a registered trademark of Linus Torvalds.</p>
     </div>
 </body>
