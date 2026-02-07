@@ -31,7 +31,6 @@ Users can select any date (Feb 7, 2026 - Dec 31, 2026) to download specific ISO 
 - Legacy BIOS boot support
 - Custom WiFi drivers (Realtek RTL8812AU, Atheros)
 - ThinkPad device optimization
-- vidorinstall smart installer command
 
 ## Adding ISO Files
 
@@ -55,7 +54,6 @@ Note: ISO files should be managed via LFS or external hosting due to GitHub file
 - Base System: Debian Bookworm
 - Boot: Legacy BIOS
 - Philosophy: CLI-first, English-based, power user focused
-- Installation: vidorinstall command for environment customization
 - Optimization: Built for ThinkPad laptops and penetration testing
 
 ## Deployment
@@ -70,3 +68,4 @@ This website is static HTML/CSS/JS and can be deployed to GitHub Pages, Netlify,
 
 ---
 Vidor OS is a community-driven project.
+
