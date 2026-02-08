@@ -24,10 +24,10 @@
         }
         
         body { 
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: #e0e0e0; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            font-size: 15px; 
+            background: #000000;
+            color: #ffffff; 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif; 
+            font-size: 16px; 
             margin: 0; 
             padding: 0;
             line-height: 1.6;
@@ -37,11 +37,11 @@
         }
         
         header { 
-            background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 100%);
-            border-bottom: 3px solid #DC143C;
+            background: #1a0000;
+            border-bottom: 2px solid #DC143C;
             color: white; 
             padding: 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+            box-shadow: 0 2px 10px rgba(220, 20, 60, 0.3);
             flex-shrink: 0;
         }
         
@@ -64,9 +64,9 @@
         }
         
         .watermark-img {
-            height: 50px;
+            height: 80px;
             width: auto;
-            max-width: 60px;
+            max-width: 100px;
             transition: transform 0.3s;
         }
         
@@ -85,13 +85,14 @@
         #logo a { 
             color: #DC143C; 
             text-decoration: none; 
-            font-family: 'Courier New', monospace;
-            text-transform: uppercase;
-            transition: text-shadow 0.3s;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-weight: 600;
+            text-transform: none;
+            transition: color 0.2s;
         }
         
         #logo a:hover { 
-            text-shadow: 0 0 20px #DC143C;
+            color: #ff1744;
         }
         
         #nav-menu { 
@@ -119,7 +120,7 @@
         
         #nav-menu li a:hover,
         #nav-menu li a.active { 
-            background: rgba(220, 20, 60, 0.1);
+            background: rgba(220, 20, 60, 0.2);
             border-left-color: #DC143C;
             color: #DC143C;
         }
@@ -136,18 +137,18 @@
         }
         
         .box { 
-            background: rgba(45, 45, 45, 0.8);
-            border-left: 4px solid #DC143C;
-            padding: 20px; 
-            margin-bottom: 25px; 
-            border-radius: 3px;
-            backdrop-filter: blur(5px);
-            transition: transform 0.3s;
+            background: #1a0000;
+            border: 1px solid #DC143C;
+            padding: 24px; 
+            margin-bottom: 20px; 
+            border-radius: 6px;
+            backdrop-filter: none;
+            transition: all 0.2s;
         }
         
         .box:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(220, 20, 60, 0.2);
+            border-color: #ff1744;
+            box-shadow: 0 0 15px rgba(220, 20, 60, 0.3);
         }
         
         h2 { 
@@ -155,29 +156,31 @@
             border-bottom: 2px solid #DC143C;
             padding-bottom: 10px; 
             margin-top: 0;
-            font-size: clamp(20px, 5vw, 24px);
+            font-size: 24px;
+            font-weight: 600;
         }
         
         h3 { 
             color: #DC143C;
             margin-top: 0;
-            font-size: clamp(16px, 4vw, 18px);
+            font-size: 20px;
+            font-weight: 600;
         }
         
         .sidebar-widget { 
-            background: rgba(45, 45, 45, 0.8);
-            border-left: 4px solid #DC143C;
+            background: #1a0000;
+            border: 1px solid #DC143C;
             padding: 15px; 
             margin-bottom: 20px;
-            border-radius: 3px;
-            backdrop-filter: blur(5px);
+            border-radius: 6px;
+            backdrop-filter: none;
         }
         
         .sidebar-widget h4 { 
             border-bottom: 2px solid #DC143C;
             margin: 0 0 12px 0; 
             padding-bottom: 8px;
-            font-size: clamp(12px, 2.5vw, 14px);
+            font-size: 14px;
             color: #DC143C;
             text-transform: uppercase;
             letter-spacing: 1px;
@@ -187,7 +190,7 @@
             list-style: none; 
             padding: 0; 
             margin: 0; 
-            font-size: clamp(12px, 2.2vw, 13px);
+            font-size: 13px;
         }
         
         .sidebar-widget li { 
@@ -206,12 +209,12 @@
         
         #footer { 
             text-align: center; 
-            font-size: clamp(11px, 2vw, 12px);
-            color: #888; 
+            font-size: 12px;
+            color: #cccccc; 
             padding: 30px 20px;
             border-top: 2px solid #DC143C;
             margin-top: 40px;
-            background: rgba(20, 20, 20, 0.9);
+            background: #1a0000;
             flex-shrink: 0;
         }
         
